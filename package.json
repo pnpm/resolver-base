@@ -1,0 +1,54 @@
+{
+  "name": "@pnpm/resolver-base",
+  "version": "0.0.0",
+  "description": "Types for pnpm-compatible resolvers",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "start": "npm run tsc -- --watch",
+    "lint": "tslint -c tslint.json --project .",
+    "tsc": "rimraf lib && tsc --pretty",
+    "test": "npm run lint && preview && ts-node test --type-check && mos t",
+    "md": "mos",
+    "prepare": "npm run tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pnpm/resolver-base.git"
+  },
+  "keywords": [
+    "pnpm",
+    "fetcher",
+    "tarball"
+  ],
+  "engines": {
+    "node": ">=4"
+  },
+  "author": "Zoltan Kochan <z@kochan.io> (https://www.kochan.io/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pnpm/resolver-base/issues"
+  },
+  "homepage": "https://github.com/pnpm/resolver-base#readme",
+  "dependencies": {
+    "@pnpm/types": "^1.7.0"
+  },
+  "devDependencies": {
+    "mos": "^2.0.0-alpha.3",
+    "mos-plugin-readme": "^1.0.4",
+    "rimraf": "^2.6.2",
+    "tslint": "^5.9.1",
+    "typescript": "^2.7.1"
+  },
+  "mos": {
+    "plugins": [
+      "readme"
+    ],
+    "installation": {
+      "useShortAlias": true
+    }
+  }
+}
