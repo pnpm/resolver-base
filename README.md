@@ -12,6 +12,32 @@
 npm i -S @pnpm/resolver-base
 ```
 
+## Usage
+
+Here's a template of a resolver using types from `@pnpm/resolver-base`:
+
+```ts
+import {
+  ResolveOptions,
+  ResolveResult,
+  WantedDependency,
+} from '@pnpm/resolver-base'
+
+export async function (
+  wantedDependency: WantedDependency,
+  opts: ResolveOptions,
+): Promise<ResolveResult> {
+  // ...
+  return {
+    id,
+    resolution,
+    package,
+    latest,
+    normalizedPref,
+  }
+}
+```
+
 ## License
 
 [MIT](./LICENSE) © [Zoltan Kochan](https://www.kochan.io/)
