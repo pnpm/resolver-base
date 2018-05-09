@@ -32,6 +32,7 @@ export interface ResolveResult {
   package?: PackageJson,
   latest?: string,
   normalizedPref?: string, // is null for npm-hosted dependencies
+  resolvedVia: 'npm-registry' | 'git-repository' | 'local-filesystem' | 'url' | string,
 }
 
 export interface ResolveOptions {
