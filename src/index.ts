@@ -35,6 +35,15 @@ export interface ResolveResult {
   resolvedVia: 'npm-registry' | 'git-repository' | 'local-filesystem' | 'url' | string,
 }
 
+export interface LocalPackages {
+  [name: string]: {
+    [version: string]: {
+      directory: string,
+      package: PackageJson,
+    },
+  },
+}
+
 export interface ResolveOptions {
   defaultTag?: string,
   registry: string,
@@ -45,6 +54,7 @@ export interface ResolveOptions {
       type: 'version' | 'range' | 'tag',
     },
   },
+  localPackages?: LocalPackages,
 }
 
 export type WantedDependency = {
