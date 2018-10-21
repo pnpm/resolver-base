@@ -33,7 +33,7 @@
   },
   "homepage": "https://github.com/pnpm/resolver-base#readme",
   "dependencies": {
-    "@pnpm/types": "^1.7.0"
+    "@pnpm/types": "^2.0.0"
   },
   "devDependencies": {
     "mos": "^2.0.0-alpha.3",
