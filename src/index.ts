@@ -46,15 +46,16 @@ export interface LocalPackages {
 
 export interface ResolveOptions {
   defaultTag?: string,
-  registry: string,
-  prefix: string,
+  localPackages?: LocalPackages,
   preferredVersions: {
     [packageName: string]: {
       selector: string,
       type: 'version' | 'range' | 'tag',
     },
   },
-  localPackages?: LocalPackages,
+  prefix: string,
+  registry: string,
+  shrinkwrapDirectory?: string, // TODO: make it required in next major version
 }
 
 export type WantedDependency = {
